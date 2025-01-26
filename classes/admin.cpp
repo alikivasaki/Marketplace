@@ -20,7 +20,7 @@ using namespace std;
 */
 string Admin::input_title(){
     string title;
-    cout << "Give product title: ";
+    cout << "Enter product title: ";
     cin.ignore(1000, '\n');
     getline(cin, title);  //get title until \n
     return title;
@@ -28,14 +28,14 @@ string Admin::input_title(){
 
 string Admin::input_description(){
     string description;
-    cout << "Give product description: ";  //description
+    cout << "Enter product description: ";  //description
     getline(cin, description);  //get all input until \n
     return description;
 }
 
 string Admin::input_category_name(CategoryManager& manager){
     string category_name;
-    cout << "Give one of the following categories: ";  //category
+    cout << "Enter one of the following categories: ";  //category
     manager.print_all_categories();
     getline(cin, category_name);
     while(manager.find_category(category_name) == -1){  //INPUT CHECK 1 - If category name doesnt exist
@@ -48,7 +48,7 @@ string Admin::input_category_name(CategoryManager& manager){
 
 string Admin::input_subcategory(CategoryManager& manager, string& category_name){
     string subcategory;
-    cout << "Give one of the following subcategories: ";
+    cout << "Enter one of the following subcategories: ";
     manager.print_subcategories(category_name);  //prints all subcategories of the given category_name
     getline(cin, subcategory);
     while(manager.find_subcategory(category_name, subcategory) == -2){  //INPUT CHECK 2 - If subcategory doesnt exist
@@ -63,7 +63,7 @@ float Admin::input_price(){
     float price;
     string for_price;
     string invalid_input;
-    cout << "Give product price: ";
+    cout << "Enter product price: ";
     cin >> price;
 
     // Check for non-numeric input or negative values
@@ -71,10 +71,10 @@ float Admin::input_price(){
         if(cin.fail()){
             cin.clear();  // Clear the error flag
             cin.ignore(1000, '\n');  // Discard invalid input
-            cout << "Invalid input: Please enter a valid non-negative number." << endl;
+            cout << "Words not allowed." << endl;
         }
         else{
-            cout << "Only non-negative values for price allowed." << endl;
+            cout << "Negative numbers not allowed." << endl;
         }
         cout << "Give product price: ";
         cin >> price;
