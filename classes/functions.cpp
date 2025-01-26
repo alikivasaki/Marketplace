@@ -41,7 +41,7 @@ string input_category_name(CategoryManager& manager){
 
 
 //Getting the subcategory from the user
-string input_subcategory(CategoryManager& manager, string& category_name){
+string input_subcategory(CategoryManager& manager, const string& category_name){
     string subcategory;
     cout << "Enter one of the following subcategories: ";
     manager.print_subcategories(category_name);  //prints all subcategories of the given category_name
@@ -93,7 +93,7 @@ string input_measurement_type(){
     return measurement_type;
 }
 
-int input_quantity(string& measurement_type){
+int input_quantity(const string& measurement_type){
     int quantity;
     cout << "Give amount of " << measurement_type << ": ";  //Give amount of kg/unit
     cin >> quantity; 
