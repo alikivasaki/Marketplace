@@ -1,6 +1,6 @@
 all:
 	@clear
-	@g++ -c oop24.cpp
+	@g++ -c main.cpp
 	@g++ -c classes/admin.cpp
 	@g++ -c classes/cart.cpp
 	@g++ -c classes/category_manager.cpp
@@ -12,8 +12,9 @@ all:
 	@g++ -c classes/user_manager.cpp
 	@g++ -c classes/user.cpp
 	@g++ -c classes/product_history.cpp
-	@g++ -o oop24 oop24.o admin.o cart.o category_manager.o category.o customer.o order_history.o product_manager.o product.o user_manager.o user.o product_history.o
-	@rm oop24.o
+	@g++ -c classes/functions.cpp
+	@g++ -o Marketplace main.o admin.o cart.o category_manager.o category.o customer.o order_history.o product_manager.o product.o user_manager.o user.o product_history.o functions.o
+	@rm main.o
 	@rm admin.o
 	@rm cart.o
 	@rm category_manager.o
@@ -25,5 +26,6 @@ all:
 	@rm user_manager.o
 	@rm user.o
 	@rm product_history.o
-	@./oop24 files/categories.txt files/products.txt files/users.txt
+	@rm functions.o
+	@./Marketplace files/categories.txt files/products.txt files/users.txt
 	

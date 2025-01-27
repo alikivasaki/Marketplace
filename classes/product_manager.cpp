@@ -206,8 +206,7 @@ void ProductManager::save_products(){
         tofile << pair.second.get_subcategory() << " @ ";
         tofile << pair.second.get_price() << " @ ";
         tofile << pair.second.get_measurement_type() << " @ ";
-        tofile << pair.second.get_quantity() << " @ ";
-        tofile << endl;
+        tofile << pair.second.get_quantity() << endl;
     }
 
     tofile.close();

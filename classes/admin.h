@@ -14,16 +14,6 @@ using namespace std;
 
 class Admin: public User{
     //Already has username and password (from User)
-    protected:
-        //Aixiliary methods for create_new_prod
-        string input_title();
-        string input_description();
-        string input_category_name(CategoryManager& manager);
-        string input_subcategory(CategoryManager& manager, string& category_name);
-        float input_price();
-        string input_measurement_type();
-        int input_quantity(string& measurement_type);
-
     public:
         //Constructors & Destructor
         Admin(string name, string pass);     
@@ -37,8 +27,6 @@ class Admin: public User{
 
         //3. Remove a product
         void remove_prod(ProductManager& prod_manager);
-
-
 
         //5. Show Unavailable Products
         void show_unavailable_products(ProductManager& prod_manager);

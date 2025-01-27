@@ -38,14 +38,6 @@ void UserManager::load_users() {
     }
 
     file.close(); 
-
-    // for (const auto& [username, data] : users) {
-    //     const auto& [password, isAdmin] = data;
-    //     cout << "Username: " << username 
-    //          << ", Password: " << password 
-    //          << ", Is Admin: " << (isAdmin ? "Yes" : "No") 
-    //          << endl;
-    // }
 }
 
 bool UserManager::find_user(const string& username) const {
